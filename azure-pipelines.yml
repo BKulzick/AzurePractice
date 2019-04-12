@@ -11,5 +11,5 @@ pool:
 
 steps:
 - script: docker build -t bkulczycki/retroazure
-    docker run -it -e 'USER_LOGIN=$(USER_LOGIN)' -v $PWD:/opt bkulczycki/retroazure
+    docker run -e 'USER_LOGIN=$(USER_LOGIN)' -v $PWD:/opt bkulczycki/retroazure
   displayName: 'docker build and run'
