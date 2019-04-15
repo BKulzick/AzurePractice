@@ -10,5 +10,6 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: docker run -e 'USER_LOGIN=$env:USER_LOGIN' bkcontainer.azurecr.io/retroazure/retroazure
+- script: docker login -u $(dockerId) -p $(pswd) bkcontainer.azurecr.io
+- script: docker run -e 'USER_LOGIN=$env:USER_LOGIN' bkcontainer.azurecr.io/retroazure
   displayName: 'docker build and run'
