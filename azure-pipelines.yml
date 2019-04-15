@@ -11,5 +11,5 @@ pool:
 
 steps:
 - script: docker login -u $(dockerId) -p $(pswd) bkcontainer.azurecr.io
-- script: docker run -e 'USER_LOGIN=$env:USER_LOGIN' bkcontainer.azurecr.io/retroazure
+- script: docker run -e 'USER_LOGIN=$env:USER_LOGIN' bkcontainer.azurecr.io/retroazure/retroazure
   displayName: 'docker build and run'
