@@ -8,14 +8,22 @@ trigger:
 
 pool:
   vmImage: 'Ubuntu-16.04'
-
+variables:
+    azureSubscriptionEndpoint: retroazure
+    azureContainerRegistry: bkcontainer.azurecr.io
 steps:
+- task: Docker@1
+  displayName: Container registry login
+  inputs:
+    command: login
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+    azureContainerRegistry: $(azureContainerRegistry)
 - task: Docker@1
   displayName: Run image
   inputs:
     command: run
-    azureSubscriptionEndpoint: bkcontainer.azurecr.io
-    azureContainerRegistry: retroazure
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+    azureContainerRegistry: $(azureContainerRegistry)
     imageName: retroazure:latest
 # - script: docker login -u $(dockerId) -p $(pswd) bkcontainer.azurecr.io
 # - script: docker run -e 'USER_LOGIN=$(USER_LOGIN)' bkcontainer.azurecr.io/retroazure/retroazure
