@@ -1,7 +1,7 @@
 # Node.js
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript -v $PWD:/opt
 
 trigger:
 - master
@@ -10,6 +10,5 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: docker build -t bkcontainer.azurecr.io/retroazure
-- script: docker run -e 'USER_LOGIN=$env:USER_LOGIN' -v $PWD:/opt bkulczycki/retroazure
+- script: docker run -e 'USER_LOGIN=$env:USER_LOGIN' bkcontainer.azurecr.io/retroazure/retroazure
   displayName: 'docker build and run'
