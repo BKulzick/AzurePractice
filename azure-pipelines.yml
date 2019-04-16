@@ -12,8 +12,8 @@ variables:
     azureSubscriptionEndpoint: retroazure
     azureContainerRegistry: bkcontainer.azurecr.io
 steps:
-  - task: Gradle@2
-    inputs:
+- task: Gradle@2
+  inputs:
     gradleWrapperFile: 'gradlew'
     workingDirectory: '/api'
     #options: # Optional
@@ -36,7 +36,7 @@ steps:
     #checkStyleRunAnalysis: false # Optional
     #findBugsRunAnalysis: false # Optional
     #pmdRunAnalysis: false # Optional
-    displayName: Build API with Gradle
+  displayName: Build API with Gradle
 - task: Docker@1
   displayName: Container registry login
   inputs:
