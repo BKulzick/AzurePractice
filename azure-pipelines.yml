@@ -42,7 +42,7 @@ steps:
   inputs:
     command: 'install'
     workingDir: '$(Build.SourcesDirectory)/ui'
-    displayName: NPM install front end
+  displayName: NPM install front end
 - script: npm run unit
   workingDirectory: '$(Build.SourcesDirectory)/ui'
   displayName: Run Front End Unit Tests
