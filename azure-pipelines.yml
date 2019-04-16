@@ -40,14 +40,15 @@ steps:
   displayName: Build API with Gradle
 - task: Npm@1
   inputs:
+    command: 'install'
+    workingDir: '$(Build.SourcesDirectory)/ui'
+    displayName: NPM install front end
+- task: Npm@1
+  inputs:
     command: 'run unit'
     workingDir: '$(Build.SourcesDirectory)/ui'
   displayName: Run Front End Unit Tests
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: '$(Build.SourcesDirectory)/ui'
-  displayName: NPM install front end
+
 #- task: Docker@1
 #  displayName: Container registry login
 #  inputs:
