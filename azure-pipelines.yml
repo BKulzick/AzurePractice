@@ -32,12 +32,12 @@ steps:
 - script: npm run unit
   workingDirectory: '$(Build.SourcesDirectory)/ui'
   displayName: Run Front End Unit Tests
-- script: npm run start
+- script: npm run build-prod
   workingDirectory: '$(Build.SourcesDirectory)/ui'
-  displayName: Start Front End
-- script: npm run e2e
-  workingDirectory: '$(Build.SourcesDirectory)/ui'
-  displayName: Run End 2 End Test
+  displayName: Build Front End
+#- script: npm run e2e
+#  workingDirectory: '$(Build.SourcesDirectory)/ui'
+#  displayName: Run End 2 End Test
 #- task: Docker@1
 #  displayName: Container registry login
 #  inputs:
