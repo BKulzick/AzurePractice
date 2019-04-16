@@ -18,9 +18,9 @@ steps:
     workingDirectory: $(Build.SourcesDirectory)/api/
     #options: # Optional
     tasks: 'build'
-    #publishJUnitResults: true
-    #testResultsFiles: '**/TEST-*.xml' # Required when publishJUnitResults == True
-    #testRunTitle: # Optional
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml' # Required when publishJUnitResults == True
+#    testRunTitle: # Optional
     #codeCoverageToolOption: 'None' # Optional. Options: none, cobertura, jaCoCo
     #codeCoverageClassFilesDirectories: 'build/classes/main/' # Required when codeCoverageToolOption == False
     #codeCoverageClassFilter: # Optional
