@@ -43,7 +43,7 @@ steps:
     command: 'install'
     workingDir: '$(Build.SourcesDirectory)/ui'
     displayName: NPM install front end
-- script: npm run unit
+- script: ./ui/npm run unit
   displayName: Run Front End Unit Tests
 
 #- task: Docker@1
