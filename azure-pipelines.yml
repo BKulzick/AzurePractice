@@ -15,7 +15,7 @@ steps:
 - task: Gradle@2
   inputs:
     gradleWrapperFile: 'gradlew'
-    workingDirectory: '/api'
+    workingDirectory: $(Build.SourcesDirectory)/api/
     #options: # Optional
     tasks: 'build'
     #publishJUnitResults: true
