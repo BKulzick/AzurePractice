@@ -38,6 +38,9 @@ steps:
     #findBugsRunAnalysis: false # Optional
     #pmdRunAnalysis: false # Optionalnpm run unit -- Runs all tests and closes
   displayName: Build API with Gradle
+- script: ./gradlew bootRun
+  workingDirectory: $(Build.SourcesDirectory)/api/
+  displayName: Run API
 - task: Npm@1
   inputs:
     command: 'install'
